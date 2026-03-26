@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUBG Portfólio</title>
+    <meta name="description" content="PUBG: BATTLEGROUNDS - Aterrisse, saqueie, sobreviva!">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="conteudo">
+
+    <section class="hero-game">
+        <div class="hero-overlay">
+            <h1>PUBG: BATTLEGROUNDS</h1>
+            <p class="hero-slogan">ATERRISSE, SAQUEIE, SOBREVIVA!</p>
+            <p class="hero-subtitle">Jogue PUBG: BATTLEGROUNDS grátis</p>
+
+            <div class="hero-platforms">
+                <a href="#" class="platform-box">Steam</a>
+                <a href="#" class="platform-box">Epic Games</a>
+                <a href="#" class="platform-box">PlayStation</a>
+                <a href="#" class="platform-box">Xbox</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <div class="col-left">
+
+            <section class="card">
+                <h2>Galeria</h2>
+                <div class="carousel">
+                    <!-- Slide principal -->
+                    <div class="slides">
+                        <div class="slide active" id="slideVideo">
+                            <iframe src="Video/Video1.mp4" title="Trailer PUBG" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <img class="slide" src="img/img1.jpg" alt="Imagem 1 do PUBG">
+                        <img class="slide" src="img/img2.jpg" alt="Imagem 2 do PUBG">
+                        <img class="slide" src="img/img3.jpg" alt="Imagem 3 do PUBG">
+                        <img class="slide" src="img/img4.jpg" alt="Imagem 4 do PUBG">
+                        <img class="slide" src="img/img5.jpg" alt="Imagem 5 do PUBG">
+                        <img class="slide" src="img/img6.jpg" alt="Imagem 6 do PUBG">
+                        <img class="slide" src="img/img7.jpg" alt="Imagem 7 do PUBG">
+                        <img class="slide" src="img/img8.jpg" alt="Imagem 8 do PUBG">
+                        <img class="slide" src="img/img9.jpg" alt="Imagem 9 do PUBG">
+                        <img class="slide" src="img/img10.jpg" alt="Imagem 10 do PUBG">
+                        <img class="slide" src="img/img11.jpg" alt="Imagem 11 do PUBG">
+                    </div>
+
+                    <!-- Barra de miniaturas -->
+                    <div class="thumbs-bar">
+                        <button class="arrow-left" onclick="prevSlide()">&#10094;</button>
+                        <div class="thumbs">
+                            <span class="thumb active" onclick="goToSlide(0)">▶ Trailer</span>
+                            <img class="thumb" src="img/img1.jpg" alt="Miniatura 1" onclick="goToSlide(1)">
+                            <img class="thumb" src="img/img2.jpg" alt="Miniatura 2" onclick="goToSlide(2)">
+                            <img class="thumb" src="img/img3.jpg" alt="Miniatura 3" onclick="goToSlide(3)">
+                            <img class="thumb" src="img/img4.jpg" alt="Miniatura 4" onclick="goToSlide(4)">
+                            <img class="thumb" src="img/img5.jpg" alt="Miniatura 5" onclick="goToSlide(5)">
+                            <img class="thumb" src="img/img6.jpg" alt="Miniatura 6" onclick="goToSlide(6)">
+                            <img class="thumb" src="img/img7.jpg" alt="Miniatura 7" onclick="goToSlide(7)">
+                            <img class="thumb" src="img/img8.jpg" alt="Miniatura 8" onclick="goToSlide(8)">
+                            <img class="thumb" src="img/img9.jpg" alt="Miniatura 9" onclick="goToSlide(9)">
+                            <img class="thumb" src="img/img10.jpg" alt="Miniatura 10" onclick="goToSlide(10)">
+                            <img class="thumb" src="img/img11.jpg" alt="Miniatura 11" onclick="goToSlide(11)">
+                        </div>
+                        <button class="arrow-right" onclick="nextSlide()">&#10095;</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>Sobre o Jogo</h2>
+                <p><strong>PUBG: BATTLEGROUNDS</strong> é um dos jogos mais conhecidos do gênero Battle Royale. Até 100 jogadores entram em uma partida, exploram o mapa em busca de armas, veículos, equipamentos e estratégias para sobreviver até o final.</p>
+                <p>A zona segura diminui ao longo da partida, aumentando a tensão e forçando os confrontos. O objetivo é simples e desafiador: ser o último <strong class="highlight">Sobrevivente</strong></p>
+
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <span class="stat-value">100</span>
+                        <span class="stat-label">Jogadores</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value">8+</span>
+                        <span class="stat-label">Mapas</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value">40+</span>
+                        <span class="stat-label">Armas</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value">15+</span>
+                        <span class="stat-label">Veículos</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>Requisitos do Sistema</h2>
+                <div class="requirements">
+                    <div class="req-col">
+                        <h3>Mínimo</h3>
+                        <ul>
+                            <li><span class="req-label">SO:</span> Windows 10 64-bit</li>
+                            <li><span class="req-label">CPU:</span> Intel Core i5-4430 / AMD FX-6300</li>
+                            <li><span class="req-label">RAM:</span> 8 GB</li>
+                            <li><span class="req-label">GPU:</span> NVIDIA GTX 960 2GB / AMD R7 370 2GB</li>
+                            <li><span class="req-label">Disco:</span> 40 GB</li>
+                        </ul>
+                    </div>
+                    <div class="req-col">
+                        <h3>Recomendado</h3>
+                        <ul>
+                            <li><span class="req-label">SO:</span> Windows 10 64-bit</li>
+                            <li><span class="req-label">CPU:</span> Intel i5-6600K / AMD Ryzen 5 1600</li>
+                            <li><span class="req-label">RAM:</span> 16 GB</li>
+                            <li><span class="req-label">GPU:</span> NVIDIA GTX 1060 3GB / AMD RX 580 4GB</li>
+                            <li><span class="req-label">Disco:</span> 50 GB SSD</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <div class="col-right">
+
+            <section class="card">
+                <h2>Informações</h2>
+                <p><strong>Plataforma:</strong> PC, Xbox, PlayStation e Mobile</p>
+                <p><strong>Gênero:</strong> Battle Royale</p>
+                <p><strong>Desenvolvedor:</strong> PUBG Studios</p>
+                <p><strong>Lançamento:</strong> 2017</p>
+            </section>
+
+            <section class="card">
+                <h2>Classificação</h2>
+                <div class="rating-badge">
+                    <span class="age-badge">13+</span>
+                    <p>Violência e combate armado.</p>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>Conquistas</h2>
+                <ul class="achievements">
+                    <li>🏆 Primeira vitória</li>
+                    <li>🎯 100 eliminações</li>
+                    <li>🚗 50 km dirigidos</li>
+                    <li>🔫 Especialista em armas</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>Redes Sociais</h2>
+                <ul class="social-links">
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitch</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <a class="btn-play" href="#">Jogar Agora</a>
+            </section>
+
+        </div>
+
+    </div>
+
+    <section class="comments-section">
+        <div class="comments-card">
+            <h2>Comentários</h2>
+
+            <div class="comment-form-box">
+                <form class="comment-form">
+                    <input type="text" placeholder="Seu nome">
+                    <textarea placeholder="Escreva seu comentário..."></textarea>
+                    <button type="submit" class="btn-comment">✈ Enviar</button>
+                </form>
+            </div>
+
+            <div class="comment-list">
+                <div class="comment-item">
+                    <div class="comment-header">
+                        <div class="comment-user">
+                            <span class="comment-user-icon">◌</span>
+                            <strong>Laurence</strong>
+                        </div>
+                        <span class="comment-date">23/03/2026</span>
+                    </div>
+                    <p>Gráfico ruim</p>
+                    <span class="comment-likes">👍 5</span>
+                </div>
+
+                <div class="comment-item">
+                    <div class="comment-header">
+                        <div class="comment-user">
+                            <span class="comment-user-icon">◌</span>
+                            <strong>Gabriel</strong>
+                        </div>
+                        <span class="comment-date">22/03/2026</span>
+                    </div>
+                    <p>Gráfico bom</p>
+                    <span class="comment-likes">👍 12</span>
+                </div>
+
+                <div class="comment-item">
+                    <div class="comment-header">
+                        <div class="comment-user">
+                            <span class="comment-user-icon">◌</span>
+                            <strong>Carlos</strong>
+                        </div>
+                        <span class="comment-date">21/03/2026</span>
+                    </div>
+                    <p>Gráfico mais ou menos</p>
+                    <span class="comment-likes">👍 8</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>PUBG: BATTLEGROUNDS</h3>
+                <p>O Battle Royale que definiu o gênero. Aterrisse, saqueie e seja o último sobrevivente.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="#">Site Oficial</a></li>
+                    <li><a href="#">Steam</a></li>
+                    <li><a href="#">Suporte</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Comunidade</h3>
+                <ul>
+                    <li><a href="#">Discord</a></li>
+                    <li><a href="#">Reddit</a></li>
+                    <li><a href="#">Twitter / X</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Termos de Uso</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Trabalho: Laurence Miguel e Gabriel Paes</p>
+            <p>© 2026 PUBG Studios. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</div>
+
+
+<script>
+var slides = document.querySelectorAll('.slide'); // pegar todas imagens grandes do carrossel
+var thumbs = document.querySelectorAll('.thumb'); // pegar todas miniaturas do carrossel
+var barra = document.querySelector('.thumbs'); // pegar barra onde ficam as miniaturas
+var atual = 0; // numero do slide atual que esta aparecendo
+
+function atualizar(){ // funcao para atualizar imagem mostrada
+    slides.forEach(s => s.classList.remove('active')); // tirar classe ativa de todas imagens grandes
+    thumbs.forEach(t => t.classList.remove('active')); // tirar classe ativa de todas miniaturas
+
+    slides[atual].classList.add('active'); // ativar imagem principal atual
+    thumbs[atual].classList.add('active'); // ativar miniatura atual
+
+    var pos = thumbs[atual].offsetLeft - 100; // calcular posicao da miniatura atual na barra
+    barra.scrollTo({ left: pos, behavior: "smooth" }); // mover barra suavemente ate a miniatura
+}
+
+function nextSlide(){ // funcao para ir para proxima imagem
+    atual++; // aumentar numero do slide
+    if(atual >= slides.length){ // verificar se chegou no final
+        atual = 0; // voltar para primeira imagem (loop)
+    }
+    atualizar(); // atualizar carrossel
+}
+
+function prevSlide(){ // funcao para voltar imagem anterior
+    atual--; // diminuir numero do slide
+    if(atual < 0){ // verificar se passou do inicio
+        atual = slides.length - 1; // ir para ultima imagem (loop)
+    }
+    atualizar(); // atualizar carrossel
+}
+
+thumbs.forEach((t, i)=>{ // percorrer todas miniaturas
+    t.addEventListener("click", ()=>{ // quando clicar na miniatura
+        atual = i; // definir slide atual igual miniatura clicada
+        atualizar(); // atualizar carrossel
+    });
+});
+</script>

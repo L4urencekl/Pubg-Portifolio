@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap'); 
+
+* { margin: 0; padding: 0; box-sizing: border-box; }  
+
+body {
+    background: #0f0f0f; /* fundo desta area */
+    color: #f0f0f0; /* cor do texto desta area */
+    font-family: 'Inter', Arial, sans-serif; /* fonte usada nesta parte */
+    line-height: 1.6; /* espaco entre linhas do texto */
+}
+
+h1, h2, h3 { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em; }  
+a { text-decoration: none; color: inherit; }  
+ul { list-style: none; }
+
+/* banner principal */
+.hero-game {
+    width: 100%; /* largura total do banner */
+    min-height: 480px; /* altura minima do banner */
+    overflow: hidden; /* esconder sobra da imagem do banner */
+    background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.6)), url("img/hero-bg.jpg") center/cover no-repeat; /* imagem de fundo do banner */
+    display: flex; /* alinhar conteudo do banner */
+    align-items: center; /* centralizar conteudo na vertical no banner */
+    justify-content: center; /* centralizar conteudo na horizontal no banner */
+}
+
+/* caixa do texto do banner */
+.hero-overlay {
+    width: 100%; /* largura da caixa do banner */
+    max-width: 1100px; /* largura maxima da caixa do banner */
+    padding: 50px 30px; /* espaco interno da caixa do banner */
+    text-align: center; /* centralizar texto do banner */
+}
+
+/* titulo principal do banner */
+.hero-overlay h1 {
+    font-size: 80px; /* tamanho do texto */
+    letter-spacing: 4px; 
+    text-shadow: 0 4px 30px rgba(0,0,0,0.6);
+    margin-bottom: 8px; /* espaco abaixo*/
+}
+
+/* frase destaque do banner */
+.hero-slogan {
+    font-family: 'Bebas Neue', sans-serif; /* fonte usada*/
+    font-size: 26px; /* tamanho do texto*/
+    letter-spacing: 2px; 
+    color: #f5c518; /* cor do texto*/
+    margin-bottom: 6px; /* espaco abaixo*/
+}
+
+.hero-subtitle { font-size: 18px; color: #ccc; margin-bottom: 30px; }  
+
+/* area dos botoes de plataforma */
+.hero-platforms {
+    display: grid; /* organizar elementos*/
+    grid-template-columns: repeat(4, 1fr); /* quantidade de colunas*/
+    gap: 14px; /* espaco entre itens*/
+    max-width: 980px; /* largura maxima*/
+    margin: 0 auto; /* espaco externo*/
+}
+
+/* botao de plataforma */
+.platform-box {
+    display: flex; /* organizar elementos*/
+    align-items: center; /* alinhar itens na vertical */
+    justify-content: center; /* alinhar itens na horizontal */
+    min-height: 64px; /* altura minima*/
+    border: 1px solid rgba(255,255,255,0.6); /* borda do elemento */
+    color: #fff; /* cor do texto */
+    font-family: 'Bebas Neue', sans-serif; /* fonte usada*/
+    font-size: 24px; /* tamanho do texto*/
+    font-weight: bold;
+    background: rgba(0,0,0,0.3); /* fund*/
+    transition: all 0.3s; /* animacao suave */
+    clip-path: polygon(0 0, 92% 0, 100% 50%, 92% 100%, 0 100%, 8% 50%);
+}
+
+/* efeito do botao ao passar o mouse */
+.platform-box:hover {
+    background: rgba(245,197,24,0.18); /* fundo*/
+    border-color: #f5c518;  
+    color: #f5c518; /* cor do texto*/
+    transform: translateY(-2px); /* mover ou aumentar elemento */
+}
+
+.container { display: flex; gap: 20px; padding: 20px; max-width: 1400px; margin: 0 auto; }  
+.col-left { width: 70%; }  
+.col-right { width: 30%; }  
+
+/* card de conteudo */
+.card {
+    background: #1c1c1c; /* fundo*/
+    padding: 24px; /* espaco interno*/
+    margin-bottom: 20px; /* espaco abaixo*/
+    border-radius: 10px; /* arredondar borda do elemento */
+    box-shadow: 0 4px 24px rgba(0,0,0,0.4); /* sombra do elemento */
+}
+
+.card h2 { font-size: 32px; margin-bottom: 16px; }  
+.card p { color: #aaa; margin-bottom: 12px; line-height: 1.7; }  
+.highlight { color: #f5c518 !important; }  
+
+.carousel { position: relative; } 
+
+/* area da imagem principal do carrossel */
+.slides {
+    width: 100%; /* largura da area da imagem principal */
+    margin-bottom: 14px; /* espaco abaixo da imagem principal */
+    border-radius: 10px; /* arredondar a area da imagem */
+    overflow: hidden; /* esconder sobra da imagem principal */
+    aspect-ratio: 16/9; /* proporcao da area do carrossel */
+    position: relative; /* base para posicionar os slides */
+}
+
+/* cada imagem principal do carrossel */
+.slide {
+    width: 100%; /* largura da imagem principal */
+    height: 100%; /* altura da imagem principal */
+    object-fit: cover; /* fazer imagem preencher a area */
+    border-radius: 10px; /* arredondar imagem principal */
+    display: none; /* esconder slide nao ativo */
+    position: absolute; /* colocar slide sobre a area principal */
+    top: 0; /* encostar slide no topo */
+    left: 0; /* encostar slide na esquerda */
+}
+
+.slide.active { display: block; }
+
+.slide iframe { width: 100%; height: 100%; border: none; border-radius: 10px; }  
+
+/* barra das miniaturas */
+.thumbs-bar {
+    position: relative; /* base para posicionar as setas */
+    display: flex; /* alinhar setas e miniaturas */
+    align-items: center; /* centralizar itens da barra na vertical */
+    gap: 12px; /* espaco entre itens da barra */
+    background: #151515; /* fundo da barra de miniaturas */
+    border-radius: 10px; /* arredondar barra de miniaturas */
+    padding: 10px 60px; /* espaco interno da barra */
+    overflow: hidden; /* esconder miniaturas que sobram */
+}
+
+.thumbs { display: flex; gap: 10px; overflow: hidden; }  
+
+/* miniaturas do carrossel */
+img.thumb, span.thumb {
+    height: 68px; /* altura da miniatura */
+    border-radius: 6px; /* arredondar miniatura */
+    border: 2px solid transparent; /* borda da miniatura */
+    opacity: 0.45; /* deixar miniatura menos visivel */
+    transition: all 0.25s; /* animacao suave da miniatura */
+    cursor: pointer; /* mostrar que a miniatura pode ser clicada */
+}
+
+/* imagem pequena do carrossel que troca a imagem principal */
+img.thumb {
+    width: 120px; /* largura da miniatura */
+    object-fit: cover; /* fazer imagem preencher a miniatura */
+    display: block; /* alinhar conteudo da miniatura */
+}
+
+/* miniatura em formato de botao com texto trailer */
+span.thumb {
+    display: flex; /* alinhar conteudo da miniatura */
+    align-items: center; /* centralizar conteudo na vertical */
+    justify-content: center; /* centralizar conteudo na horizontal */
+    min-width: 120px; /* largura minima da miniatura de texto */
+    background: #252525; /* cor de fundo da miniatura */
+    color: #f5c518; /* cor do texto da miniatura */
+    font-family: 'Bebas Neue', sans-serif; /* fonte da miniatura */
+    font-size: 16px; /* tamanho do texto da miniatura */
+    letter-spacing: 1px; /* espaco entre letras da miniatura */
+}
+
+img.thumb:hover, span.thumb:hover { opacity: 0.9; transform: scale(1.03); }  
+
+/* miniatura ativa do carrossel */
+img.thumb.active, span.thumb.active {
+    opacity: 1;
+    border-color: #f5c518;  
+    box-shadow: 0 0 12px rgba(245,197,24,0.35); /* sombra do elemento */
+}
+
+/* botoes das setas do carrossel */
+.arrow-left, .arrow-right {
+    position: absolute; /* posicionar setas sobre a barra */
+    top: 50%; /* colocar seta no meio da barra */
+    transform: translateY(-50%); /* ajustar seta para o centro */
+    width: 36px; /* largura do botao da seta */
+    height: 36px; /* altura do botao da seta */
+    background: #f5c518; /* cor de fundo da seta */
+    color: #000; /* cor do simbolo da seta */
+    border: none; /* tirar borda padrao da seta */
+    border-radius: 8px; /* arredondar botao da seta */
+    display: flex; /* alinhar simbolo da seta */
+    align-items: center; /* centralizar simbolo na vertical */
+    justify-content: center; /* centralizar simbolo na horizontal */
+    cursor: pointer; /* mostrar que a seta pode ser clicada */
+    font-size: 18px; /* tamanho do simbolo da seta */
+    font-weight: bold; /* deixar simbolo mais forte */
+    box-shadow: 0 0 12px rgba(0,0,0,0.6); /* sombra do botao da seta */
+    z-index: 3; /* deixar seta acima dos outros elementos */
+    transition: 0.25s; /* animacao suave da seta */
+}
+
+.arrow-left { left: 12px; } 
+.arrow-right { right: 12px; } 
+
+.arrow-left:hover, .arrow-right:hover {
+    background: #ffd84d; /* fundo desta area */
+    transform: translateY(-50%) scale(1.08); /* mover ou aumentar elemento */
+}
+
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 20px; }  
+
+.stat-box { text-align: center; background: #252525; border-radius: 10px; padding: 16px 8px; }  
+.stat-value { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 36px; color: #f5c518; }  
+.stat-label { color: #888; font-size: 13px; }  
+
+
+
+.requirements { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }  
+.req-col { background: #252525; border-radius: 10px; padding: 20px; }  
+.req-col h3 { font-size: 22px; color: #f5c518; margin-bottom: 14px; text-transform: uppercase; }  
+
+/* item da lista de requisitos */
+.req-col li {
+    padding: 8px 0; /* espaco interno*/
+    border-bottom: 1px solid rgba(255,255,255,0.08); 
+    color: #ccc; /* cor do texto*/
+    font-size: 14px; /* tamanho do texto*/
+}
+
+.req-col li:last-child { border-bottom: none; } 
+.req-label { color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 2px; }  
+
+.col-right .card p { font-size: 14px; margin-bottom: 8px; }  
+.rating-badge { display: flex; align-items: center; gap: 12px; }  
+
+/* selo da classificacao etaria */
+.age-badge {
+    background: #f5c518; /* fundo*/
+    color: #000; /* cor do texto*/
+    font-weight: bold;
+    font-size: 18px; /* tamanho do texto*/
+    padding: 6px 14px; /* espaco interno*/
+    border-radius: 6px; /* arredondar borda do elemento */
+    flex-shrink: 0;
+}
+
+.achievements li { background: #252525; border-radius: 8px; padding: 10px 14px; margin-bottom: 8px; font-size: 14px; }  
+.social-links li { margin-bottom: 8px; }  
+.social-links a { color: #f5c518; font-size: 14px; transition: 0.2s; }  
+.social-links a:hover { text-decoration: underline; }
+
+/* botao jogar agora */
+.btn-play {
+    display: block; /* organizar elementos*/
+    text-align: center; /* alinhar texto */
+    background: #f5c518; /* fundo*/
+    color: #000; /* cor do texto*/
+    padding: 16px; /* espaco interno*/
+    border-radius: 8px; /* arredondar borda do elemento */
+    font-family: 'Bebas Neue', sans-serif; /* fonte usad*/
+    font-size: 22px; /* tamanho do texto*/
+    font-weight: bold;
+    letter-spacing: 2px; 
+    transition: 0.3s; /* animacao suave */
+    box-shadow: 0 0 20px rgba(245,197,24,0.25); /* sombra do elemento */
+}
+
+/* efeito do botao jogar ao passar o mouse */
+.btn-play:hover {
+    background: #ffd84d; /* fundo desta area */
+    transform: translateY(-2px); /* mover ou aumentar elemento */
+    box-shadow: 0 0 30px rgba(245,197,24,0.4); /* sombra do elemento */
+}
+
+.comments-section { max-width: 1400px; margin: 0 auto; padding: 0 20px; }  
+
+/* card dos comentarios */
+.comments-card {
+    background: #1c1c1c; /* fundo desta area */
+    border-radius: 12px; /* arredondar borda do elemento */
+    padding: 22px; /* espaco interno desta area */
+    box-shadow: 0 4px 24px rgba(0,0,0,0.35); /* sombra do elemento */
+}
+
+.comments-card h2 {
+    font-size: 34px; /* tamanho do texto*/
+    margin-bottom: 18px; /* espaco abaixo*/
+    display: flex; /* organizar elementos*/
+    align-items: center; /* alinhar itens*/
+    gap: 12px; /* espaco entre itens*/
+}
+
+.comments-card h2::before { content: "▢"; color: #f5c518; font-size: 24px; line-height: 1; }  
+
+/* caixa do formulario de comentarios */
+.comment-form-box {
+    background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.04)); /* fundo desta area */
+    border-radius: 12px; /* arredondar borda do elemento */
+    padding: 16px; /* espaco interno desta area */
+    margin-bottom: 22px; /* espaco abaixo desta area */
+}
+
+.comment-form { display: flex; flex-direction: column; gap: 12px; }  
+
+/* campos do formulario */
+.comment-form input, .comment-form textarea {
+    width: 100%; /* largura*/
+    background: #050505; /* fundo */
+    border: 1px solid #2f2f2f; /* borda do elemento */
+    border-radius: 10px; /* arredondar borda do elemento */
+    padding: 14px 16px; /* espaco interno*/
+    color: #f0f0f0; /* cor do texto */
+    font-size: 15px; /* tamanho do texto desta parte */
+    font-family: 'Inter', Arial, sans-serif; /* fonte usada*/
+    outline: none;
+    transition: 0.25s; /* animacao suave */
+}
+
+.comment-form input::placeholder, .comment-form textarea::placeholder { color: #9a9a9a; }  
+
+.comment-form input:focus, .comment-form textarea:focus {
+    border-color: #f5c518;  
+    box-shadow: 0 0 0 3px rgba(245,197,24,0.08); /* sombra do elemento */
+}
+
+.comment-form textarea { min-height: 92px; resize: vertical; }  
+
+/* botao enviar comentario */
+.btn-comment {
+    align-self: flex-start;
+    background: #f5c518; /* fundo*/
+    color: #000; /* cor do texto  */
+    border: none; /* borda do elemento */
+    border-radius: 10px; /* arredondar borda do elemento */
+    padding: 12px 24px; /* espaco interno*/
+    font-size: 15px; /* tamanho do texto*/
+    font-weight: 700;
+    font-family: 'Inter', Arial, sans-serif; /* fonte */
+    cursor: pointer; /* mostrar que pode clicar */
+    transition: 0.25s; /* animacao suave */
+}
+
+.btn-comment:hover { background: #ffd84d; transform: translateY(-2px); }  
+
+.comment-list { display: flex; flex-direction: column; gap: 14px; }  
+
+/* cada comentario */
+.comment-item {
+    background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.04)); /* fundo desta area */
+    border-radius: 12px; /* arredondar borda do elemento */
+    padding: 18px 16px 14px; /* espaco interno*/
+}
+
+.comment-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px; }  
+.comment-user { display: flex; align-items: center; gap: 10px; }  
+.comment-user-icon { color: #bfbfbf; font-size: 18px; line-height: 1; }  
+.comment-user strong { color: #fff; font-size: 15px; }  
+.comment-date { color: #b5b5b5; font-size: 13px; }  
+.comment-item p { color: #c4c4c4; font-size: 15px; margin-bottom: 10px; }  
+.comment-likes { color: #b3b3b3; font-size: 14px; }  
+
+footer { background: #111; margin-top: 20px; padding: 40px 20px 0; }  
+
+/* conteudo principal do rodape */
+.footer-content {
+    display: grid; /* organizar elementos*/
+    grid-template-columns: 2fr 1fr 1fr 1fr; /* quantidade de colunas*/
+    gap: 30px; /* espaco entre itens*/
+    max-width: 1400px; /* largura maxima*/
+    margin: 0 auto; /* espaco externo */
+    padding-bottom: 30px;  
+    border-bottom: 1px solid #2a2a2a; 
+}
+
+.footer-col h3 { font-size: 20px; color: #f5c518; margin-bottom: 12px; }  
+.footer-col p { color: #888; font-size: 14px; line-height: 1.6; }  
+.footer-col ul li { margin-bottom: 8px; }  
+.footer-col a { color: #aaa; font-size: 14px; transition: 0.2s; }  
+.footer-col a:hover { color: #f5c518; }  
+
+/* parte de baixo do rodape */
+.footer-bottom {
+    max-width: 1400px; /* largura maxima*/
+    margin: 0 auto; /* espaco externo */
+    padding: 20px 0; /* espaco interno*/
+    display: flex; /* organizar elementos*/
+    justify-content: space-between; /* alinhar itens na horizontal */
+    align-items: center; /* alinhar itens na vertical */
+}
+
+.footer-bottom p { color: #555; font-size: 13px; }  
+
+@media (max-width: 1024px) {
+    .hero-platforms { grid-template-columns: repeat(2, 1fr); } 
+    .hero-overlay h1 { font-size: 60px; }  
+    .stats-grid { grid-template-columns: repeat(2, 1fr); } 
+    .footer-content { grid-template-columns: 1fr 1fr; } 
+}
+
+@media (max-width: 768px) {
+    .container { flex-direction: column; }
+    .col-left, .col-right { width: 100%; }  
+    .hero-game { min-height: 380px; }  
+    .hero-overlay { padding: 30px 20px; }  
+    .hero-overlay h1 { font-size: 44px; }  
+    .hero-slogan { font-size: 20px; }  
+    .hero-subtitle { font-size: 16px; }  
+    .hero-platforms { grid-template-columns: 1fr; } 
+    .requirements { grid-template-columns: 1fr; } 
+    .stats-grid { grid-template-columns: repeat(2, 1fr); } 
+    .thumbs-bar { padding: 10px 50px; }  
+    img.thumb, span.thumb { width: 100px; height: 58px; min-width: 100px; }  
+    .footer-content { grid-template-columns: 1fr; } 
+    .footer-bottom { flex-direction: column; gap: 6px; text-align: center; }  
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }  
+::-webkit-scrollbar-track { background: #0f0f0f; }  
+::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }  
+::-webkit-scrollbar-thumb:hover { background: #555; }  
